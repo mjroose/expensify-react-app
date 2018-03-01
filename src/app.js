@@ -32,7 +32,7 @@ firebase.auth().onAuthStateChanged((user) => {
     store.dispatch(login(user.uid));
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();
-      if (history.location.pathname === '/') { //if user is currently on login page, redirect to dashboard
+      if (history.location.pathname === '/') {
         history.push('/dashboard');
       }
     });
@@ -42,5 +42,3 @@ firebase.auth().onAuthStateChanged((user) => {
     history.push('/');
   }
 });
-
-
